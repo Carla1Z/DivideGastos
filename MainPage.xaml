@@ -98,6 +98,7 @@
                 BackgroundColor="{StaticResource SectionsColor}"
                 Keyboard="Numeric"
                 Text="0.0"
+                Completed="txtBill_Completed"
                 TextColor="{StaticResource LightFont}"
                 VerticalOptions="Center" />
             <Label
@@ -111,9 +112,9 @@
                 HeightRequest="70"
                 HorizontalOptions="CenterAndExpand"
                 Spacing="10">
-                <Button Text="10%" WidthRequest="70" />
-                <Button Text="15%" WidthRequest="70" />
-                <Button Text="20%" WidthRequest="70" />
+                <Button Text="10%" WidthRequest="70" Clicked="Button_Clicked" />
+                <Button Text="15%" WidthRequest="70" Clicked="Button_Clicked" />
+                <Button Text="20%" WidthRequest="70" Clicked="Button_Clicked" />
             </HorizontalStackLayout>
             <Label
                 x:Name="lblTip"
@@ -124,6 +125,7 @@
             <Slider
                 x:Name="sldTip"
                 Grid.Row="2"
+                ValueChanged="sldTip_ValueChanged"
                 Grid.Column="1"
                 Maximum="50"
                 Minimum="0" />
