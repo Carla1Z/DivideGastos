@@ -96,9 +96,9 @@
                 x:Name="txtBill"
                 Grid.Column="1"
                 BackgroundColor="{StaticResource SectionsColor}"
+                Completed="txtBill_Completed"
                 Keyboard="Numeric"
                 Text="0.0"
-                Completed="txtBill_Completed"
                 TextColor="{StaticResource LightFont}"
                 VerticalOptions="Center" />
             <Label
@@ -112,9 +112,18 @@
                 HeightRequest="70"
                 HorizontalOptions="CenterAndExpand"
                 Spacing="10">
-                <Button Text="10%" WidthRequest="70" Clicked="Button_Clicked" />
-                <Button Text="15%" WidthRequest="70" Clicked="Button_Clicked" />
-                <Button Text="20%" WidthRequest="70" Clicked="Button_Clicked" />
+                <Button
+                    Clicked="Button_Clicked"
+                    Text="10%"
+                    WidthRequest="70" />
+                <Button
+                    Clicked="Button_Clicked"
+                    Text="15%"
+                    WidthRequest="70" />
+                <Button
+                    Clicked="Button_Clicked"
+                    Text="20%"
+                    WidthRequest="70" />
             </HorizontalStackLayout>
             <Label
                 x:Name="lblTip"
@@ -125,10 +134,10 @@
             <Slider
                 x:Name="sldTip"
                 Grid.Row="2"
-                ValueChanged="sldTip_ValueChanged"
                 Grid.Column="1"
                 Maximum="50"
-                Minimum="0" />
+                Minimum="0"
+                ValueChanged="sldTip_ValueChanged" />
             <Label
                 Grid.Row="3"
                 Text="Dividir el total"
@@ -142,6 +151,7 @@
                 VerticalOptions="Center">
                 <Button
                     x:Name="btnMinus"
+                    Clicked="btnMinus_Clicked"
                     Text="-"
                     WidthRequest="70" />
                 <Label
@@ -159,6 +169,7 @@
                     WidthRequest="100" />
                 <Button
                     x:Name="btnPlus"
+                    Clicked="btnPlus_Clicked"
                     Text="+"
                     WidthRequest="70" />
             </HorizontalStackLayout>

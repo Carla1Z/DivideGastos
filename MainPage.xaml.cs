@@ -18,7 +18,20 @@ public partial class MainPage : ContentPage
 
     private void CalculateTotal()
     {
+        //Total propina
+        var totalTip = (bill * tip) / 100;
 
+        //Propina por persona
+        var tipByPerson = (totalTip / noPersons);
+        lblTipByPerson.Text = $"{tipByPerson:C}";
+
+        //Subtotal
+        var subtotal = (bill / noPersons);
+        lblSubtotal.Text = $"{subtotal:C}";
+
+        //Total
+        var totalByPerson = (bill + totalTip) / noPersons;
+        lblTotal.Text = $"{totalByPerson:C}";
     }
 
     private void sldTip_ValueChanged(object sender, ValueChangedEventArgs e)
@@ -36,6 +49,23 @@ public partial class MainPage : ContentPage
             var percentage = int.Parse(btn.Text.Replace("%", ""));
             sldTip.Value = percentage;
         }
+    }
+
+    private void btnMinus_Clicked(object sender, EventArgs e)
+    {
+        if (noPersons > 1)
+        {
+            noPersons--;
+        }
+        lblNoPersons.Text = noPersons.ToString();
+        CalculateTotal();
+    }
+
+    private void btnPlus_Clicked(object sender, EventArgs e)
+    {
+        noPersons++;
+        lblNoPersons.Text = noPersons.ToString();
+        CalculateTotal() ;
     }
 }
 
