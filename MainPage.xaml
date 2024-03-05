@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DivideGastos.MainPage">
+<ContentPage
+    x:Class="DivideGastos.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#2b2d42">
 
-
+    <ContentPage.Resources>
+        <Color x:Key="SectionsColor">#0d3b66</Color>
+        <Color x:Key="LightFont">#fffcf2</Color>
+        <Color x:Key="DarkFont">#eb5e28</Color>
+    </ContentPage.Resources>
 </ContentPage>
